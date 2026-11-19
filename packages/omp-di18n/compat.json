@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "package": "omp-di18n",
+  "payloadVersion": "0.1.0",
+  "host": {
+    "omp": {
+      "range": ">=19.0.0 <20.0.0",
+      "tested": [
+        "19.0.0"
+      ]
+    }
+  },
+  "notes": "omp 19.x shares the pi-tui component surface this payload patches; 20.x is untested and therefore unsupported until the dictionary and patch anchors are re-verified."
+}

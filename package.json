@@ -1,0 +1,21 @@
+{
+  "name": "tern-l10n-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Chinese localization packages and installer CLI for Tern and omp",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "sync": "node scripts/sync-payload.mjs",
+    "sync:check": "node scripts/sync-payload.mjs --check",
+    "test": "node --test \"packages/cli/test/*.test.js\"",
+    "pack": "npm pack --workspaces",
+    "status": "node packages/cli/bin/l10n.js status"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
+  "license": "MIT"
+}

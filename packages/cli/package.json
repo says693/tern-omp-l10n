@@ -1,0 +1,40 @@
+{
+  "name": "tern-omp-l10n",
+  "version": "0.1.1",
+  "description": "Install, update, monitor, and safely disable Chinese localization for Tern and omp",
+  "type": "module",
+  "bin": {
+    "l10n": "bin/l10n.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "tern",
+    "omp",
+    "i18n",
+    "zh-CN",
+    "cli",
+    "localization"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/losewayy/tern-zh-cn.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
+  "dependencies": {
+    "omp-di18n": "0.1.0",
+    "tern-zh-plus": "0.1.0"
+  }
+}

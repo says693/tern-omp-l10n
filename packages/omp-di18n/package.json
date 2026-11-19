@@ -1,0 +1,30 @@
+{
+  "name": "omp-di18n",
+  "version": "0.1.0",
+  "description": "Runtime zh-CN localization payload for the omp TUI (omp 19.x)",
+  "type": "module",
+  "files": [
+    "omp-di18n.ts",
+    "omp-di18n.zh-CN.json",
+    "compat.json",
+    "README.md"
+  ],
+  "keywords": [
+    "omp",
+    "tern",
+    "i18n",
+    "zh-CN",
+    "localization"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/losewayy/omp-di18n.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20.11"
+  }
+}

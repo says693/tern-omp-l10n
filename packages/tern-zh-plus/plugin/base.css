@@ -1,0 +1,66 @@
+/* Tern 0.9.8 zh-plus -- fixed-width labels, no vertical wrapping. */
+/* The original English text is visually hidden; the clickable elements remain unchanged. */
+main#panel > .tn-stage > .pf.sheet .pf-name {
+  font-size: 0 !important;
+  min-width: 40px !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+main#panel > .tn-stage > .pf.sheet .pf-name::before {
+  content: "设置";
+  font-size: 16px;
+  display: inline-block;
+  white-space: nowrap !important;
+  line-height: 1.4;
+}
+.tn-pl-scopes .tn-pl-scope[title^="All "],
+.tn-pl-scopes .tn-pl-scope[title^="Commands "],
+.tn-pl-scopes .tn-pl-scope[title^="Files "],
+.tn-pl-scopes .tn-pl-scope[title^="Search "],
+.tn-pl-scopes .tn-pl-scope[title^="Branches "],
+.tn-pl-scopes .tn-pl-scope[title^="Commits "],
+.tn-pl-scopes .tn-pl-scope[title^="Sessions "],
+.tn-pl-scopes .tn-pl-scope[title^="Hosts "] {
+  font-size: 0 !important;
+  white-space: nowrap !important;
+  min-width: 34px !important;
+}
+.tn-pl-scopes .tn-pl-scope[title^="All "]::before { content: "全部"; }
+.tn-pl-scopes .tn-pl-scope[title^="Commands "]::before { content: "命令"; }
+.tn-pl-scopes .tn-pl-scope[title^="Files "]::before { content: "文件"; }
+.tn-pl-scopes .tn-pl-scope[title^="Search "]::before { content: "搜索"; }
+.tn-pl-scopes .tn-pl-scope[title^="Branches "]::before { content: "分支"; }
+.tn-pl-scopes .tn-pl-scope[title^="Commits "]::before { content: "提交"; }
+.tn-pl-scopes .tn-pl-scope[title^="Sessions "]::before { content: "会话"; }
+.tn-pl-scopes .tn-pl-scope[title^="Hosts "]::before { content: "主机"; }
+.tn-pl-scopes .tn-pl-scope[title^="All "]::before,
+.tn-pl-scopes .tn-pl-scope[title^="Commands "]::before,
+.tn-pl-scopes .tn-pl-scope[title^="Files "]::before,
+.tn-pl-scopes .tn-pl-scope[title^="Search "]::before,
+.tn-pl-scopes .tn-pl-scope[title^="Branches "]::before,
+.tn-pl-scopes .tn-pl-scope[title^="Commits "]::before,
+.tn-pl-scopes .tn-pl-scope[title^="Sessions "]::before,
+.tn-pl-scopes .tn-pl-scope[title^="Hosts "]::before {
+  font-size: 12px;
+  line-height: 1.4;
+  display: inline-block;
+  white-space: nowrap !important;
+  text-align: center;
+}
+button.tb-add > span.lbl,
+button.tb-files > span.lbl {
+  font-size: 0 !important;
+  white-space: nowrap !important;
+}
+button.tb-add > span.lbl::before {
+  content: "新建标签页";
+  font-size: 13px;
+  display: inline-block;
+  white-space: nowrap;
+}
+button.tb-files > span.lbl::before {
+  content: "文件";
+  font-size: 13px;
+  display: inline-block;
+  white-space: nowrap;
+}

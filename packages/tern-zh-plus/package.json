@@ -1,0 +1,29 @@
+{
+  "name": "tern-zh-plus",
+  "version": "0.1.0",
+  "description": "Chinese/English Tern UI plugin payload with per-build compat stylesheets",
+  "type": "module",
+  "files": [
+    "plugin",
+    "compat.json",
+    "README.md"
+  ],
+  "keywords": [
+    "tern",
+    "plugin",
+    "i18n",
+    "zh-CN",
+    "localization"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/losewayy/tern-zh-cn.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20.11"
+  }
+}
