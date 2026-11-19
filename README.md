@@ -121,21 +121,32 @@ npm run pack                # npm pack 三个包
 
 同步时排除 `*.exe`、`*.pdb`、`*.log`、`*.bak`、`*.tmp`、`node_modules`、`__pycache__`、`.cache` 等；omp 只同步两个 payload 文件。
 
-## 发布步骤（尚未执行）
+## 发布记录
 
-当前仓库没有 npm 凭据，未运行 `npm publish`。发布前需要：
+已于 2026-11-19 发布到 npm：
 
-1. 可发布这三个包名的 npm 账号（`omp-di18n`、`tern-zh-plus`、`tern-omp-l10n` 已确认未被占用），以及 2FA 或 granular access token（Read and write）。
-2. 运行 `npm login && npm whoami`。
-3. 运行 `node scripts/sync-payload.mjs --check && npm test`。
-4. 同步版本号：两个 payload 包与 CLI `dependencies` 中固定的版本保持一致。
-5. 按依赖顺序发布：
+| 包 | 版本 |
+| --- | --- |
+| `omp-di18n` | `0.1.0` |
+| `tern-zh-plus` | `0.1.0` |
+| `tern-omp-l10n` | `0.1.1` |
 
-```bash
-npm publish -w omp-di18n
-npm publish -w tern-zh-plus
-npm publish -w tern-omp-l10n
-```
+`tern-omp-l10n@0.1.0` 的首次发布被 npm 暂存锁住，实际可用版本为 `0.1.1`。
+
+再次发布：
+
+1. `npm login && npm whoami`（需要 2FA；CI 可用 Read and write 的 granular token）。
+2. `node scripts/sync-payload.mjs --check && npm test`。
+3. 两个 payload 包升版本后，同步 CLI `dependencies` 中的固定版本。
+4. 按依赖顺序发布：
+
+   ```bash
+   npm publish -w omp-di18n
+   npm publish -w tern-zh-plus
+   npm publish -w tern-omp-l10n
+   ```
+
+5. npm 偶尔把首次发布转为 staged：等几分钟，或在 npm 的 **Staged Packages** 页面确认；若版本被卡住，直接升 patch 版本重发。
 
 ## 许可证
 
