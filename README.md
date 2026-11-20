@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | [`omp-di18n`](https://www.npmjs.com/package/omp-di18n) | `0.1.0` | omp 汉化 payload |
 | [`tern-zh-plus`](https://www.npmjs.com/package/tern-zh-plus) | `0.1.0` | Tern 汉化 payload |
-| [`tern-omp-zh`](https://www.npmjs.com/package/tern-omp-zh) | `0.1.2` | 安装/更新/监测 CLI（命令 `zh`） |
+| [`tern-omp-zh`](https://www.npmjs.com/package/tern-omp-zh) | —（待发布 `0.1.2`） | 安装/更新/监测 CLI（命令 `zh`） |
 
 ```bash
 npx -p tern-omp-zh zh status
