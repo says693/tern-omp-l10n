@@ -1,8 +1,8 @@
-/** `l10n autostart on|off`: ONLOGON task via schtasks (Windows only). */
+/** `zh autostart on|off`: ONLOGON task via schtasks (Windows only). */
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
-export const TASK_NAME = "tern-l10n-watch";
+export const TASK_NAME = "tern-omp-zh-watch";
 
 function query(binary = "schtasks") {
   return execFileSync(binary, ["/Query", "/TN", TASK_NAME, "/FO", "LIST"], {
@@ -14,14 +14,14 @@ function query(binary = "schtasks") {
 }
 
 function taskCommand() {
-  const bin = fileURLToPath(new URL("../bin/l10n.js", import.meta.url));
+  const bin = fileURLToPath(new URL("../bin/zh.js", import.meta.url));
   return `"${process.execPath}" "${bin}" watch`;
 }
 
 export function autostart(ctx, action = "status") {
   const logger = ctx.logger;
   if (ctx.paths.platform !== "win32") {
-    logger.warn("autostart 目前只支持 Windows 的 schtasks；其他平台请用 systemd/launchd 调用 `l10n watch`");
+    logger.warn("autostart 目前只支持 Windows 的 schtasks；其他平台请用 systemd/launchd 调用 `zh watch`");
     return { ok: false, supported: false };
   }
   if (!["on", "off", "status"].includes(action)) {
@@ -48,7 +48,7 @@ export function autostart(ctx, action = "status") {
   try {
     if (action === "on") {
       const command = taskCommand();
-      if (command.length > 260) throw new Error("计划任务命令行超过 260 字符，请缩短 Node/l10n 路径");
+      if (command.length > 260) throw new Error("计划任务命令行超过 260 字符，请缩短 Node/zh 路径");
       execFileSync(
         "schtasks",
         ["/Create", "/TN", TASK_NAME, "/SC", "ONLOGON", "/TR", command, "/RL", "LIMITED", "/F"],

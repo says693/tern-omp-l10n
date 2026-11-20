@@ -26,7 +26,7 @@ function makePayload(root, name, version, compat, files) {
 }
 
 export function makeFixture() {
-  const root = mkdtempSync(join(tmpdir(), "l10n-test-"));
+  const root = mkdtempSync(join(tmpdir(), "tern-omp-zh-test-"));
   const home = join(root, "home");
   const appData = join(root, "roaming");
   const stateDir = join(root, "state");

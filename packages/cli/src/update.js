@@ -1,4 +1,4 @@
-/** `l10n update`: refresh installed payloads, optionally from npm. */
+/** `zh update`: refresh installed payloads, optionally from npm. */
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { evaluate } from "./compat.js";
@@ -53,7 +53,7 @@ export async function installUpstreamPayload(ctx, name, version) {
 
 /**
  * Reinstalls payloads. With registry enabled (default) it first asks npm for a
- * newer package version and installs that into ~/.l10n/upstream; offline or
+ * newer package version and installs that into ~/.tern-omp-zh/upstream; offline or
  * failing requests fall back to the payload bundled with this CLI.
  */
 export async function update(ctx, selector = "all", options = {}) {

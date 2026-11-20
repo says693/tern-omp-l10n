@@ -1,4 +1,4 @@
-/** Persisted CLI state (~/.l10n/state.json). */
+/** Persisted CLI state (~/.tern-omp-zh/state.json). */
 import { mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 

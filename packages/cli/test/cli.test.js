@@ -6,16 +6,16 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
 
-const BIN = resolve(dirname(fileURLToPath(import.meta.url)), "..", "bin", "l10n.js");
+const BIN = resolve(dirname(fileURLToPath(import.meta.url)), "..", "bin", "zh.js");
 
 test("CLI dry-run install leaves the filesystem untouched", () => {
-  const root = mkdtempSync(join(tmpdir(), "l10n-cli-"));
+  const root = mkdtempSync(join(tmpdir(), "tern-omp-zh-cli-"));
   const home = join(root, "home");
   const env = {
     ...process.env,
-    L10N_HOME: home,
-    L10N_APPDATA: join(root, "roaming"),
-    L10N_STATE_DIR: join(root, "state"),
+    TERN_OMP_ZH_HOME: home,
+    TERN_OMP_ZH_APPDATA: join(root, "roaming"),
+    TERN_OMP_ZH_STATE_DIR: join(root, "state"),
   };
   const result = spawnSync(process.execPath, [BIN, "install", "all", "--dry-run"], {
     encoding: "utf8",

@@ -21,7 +21,7 @@ Tern 终端的中英文界面插件 payload。插件目录保留完整的 `plugi
 推荐用 CLI：
 
 ```bash
-npx -p tern-omp-l10n l10n install tern
+npx -p tern-omp-zh zh install tern
 ```
 
 CLI 会先备份已有插件目录为 `tern-zh-plus.backup-<时间戳>`，然后优先调用：
@@ -32,7 +32,7 @@ tern plugin install <payload>/plugin --force
 
 找不到 Tern CLI 时直接复制到 `%APPDATA%\Tern\plugins\tern-zh-plus`。手动安装也可以直接用上面的 `tern plugin install` 命令。
 
-安装后打开/重启 Tern 窗口即可生效。`tern plugin list` 应显示 `tern-zh-plus 0.9.0`。
+安装后打开/重启 Tern 窗口即可生效。`tern plugin list` 应显示 `tern-zh-plus 0.9.1`。
 
 ## 自动停用
 
@@ -41,12 +41,12 @@ CLI 的 `status`/`watch` 检测到宿主构建不在白名单时：
 1. 优先执行 `tern plugin remove tern-zh-plus`；
 2. 找不到 CLI 或命令失败时，把插件目录移到 `tern-zh-plus.backup-<时间戳>`。
 
-日志包含 `version mismatch: host=…, supported=…`。不会删除用户文件。升级 Tern 后若已支持，运行 `l10n install tern` 或 `l10n update tern` 恢复。
+日志包含 `version mismatch: host=…, supported=…`。不会删除用户文件。升级 Tern 后若已支持，运行 `zh install tern` 或 `zh update tern` 恢复。
 
 ## 卸载
 
 ```bash
-npx -p tern-omp-l10n l10n uninstall tern
+npx -p tern-omp-zh zh uninstall tern
 ```
 
 CLI 会把整个插件目录移到备份。手动卸载可运行 `tern plugin remove tern-zh-plus`；插件自己的缓存位于 `%LOCALAPPDATA%\Tern\plugin-data\tern-zh-plus`，需要时可单独清理。

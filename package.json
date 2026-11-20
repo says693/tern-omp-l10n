@@ -1,5 +1,5 @@
 {
-  "name": "tern-l10n-monorepo",
+  "name": "tern-omp-zh-monorepo",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -12,7 +12,7 @@
     "sync:check": "node scripts/sync-payload.mjs --check",
     "test": "node --test \"packages/cli/test/*.test.js\"",
     "pack": "npm pack --workspaces",
-    "status": "node packages/cli/bin/l10n.js status"
+    "status": "node packages/cli/bin/zh.js status"
   },
   "engines": {
     "node": ">=20.11"

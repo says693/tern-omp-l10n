@@ -1,4 +1,4 @@
-/** `l10n status`: table of installed payloads, host versions, compatibility, backups. */
+/** `zh status`: table of installed payloads, host versions, compatibility, backups. */
 import { evaluate, formatTernBuild } from "./compat.js";
 import { enforceCompatibility, installedVersion, isInstalled } from "./installer.js";
 import { countBackups, isDirectory, renderTable } from "./util.js";

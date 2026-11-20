@@ -39,7 +39,7 @@ async function fetchJson(url, { fetchImpl, timeout, logger, label }) {
         signal: controller.signal,
         headers: {
           accept: "application/json",
-          "user-agent": "tern-omp-l10n",
+          "user-agent": "tern-omp-zh",
         },
       }),
       deadline,

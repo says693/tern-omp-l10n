@@ -17,7 +17,7 @@ omp TUI 的运行时简体中文本地化 payload，支持 **omp 19.x**（`>=19.
 推荐用 CLI：
 
 ```bash
-npx -p tern-omp-l10n l10n install omp
+npx -p tern-omp-zh zh install omp
 ```
 
 CLI 会先把已有文件备份为 `*.backup-<时间戳>`，再复制两个 payload 文件到：
@@ -43,12 +43,12 @@ CLI 会先把已有文件备份为 `*.backup-<时间戳>`，再复制两个 payl
 }
 ```
 
-omp 20.x 尚未验证。CLI 的 `status`/`watch` 检测到 20.x 时会把两个文件改名为 `.disabled`，不会删除；确认新版可用后发布新的 payload 并调宽范围，再运行 `l10n update omp`。
+omp 20.x 尚未验证。CLI 的 `status`/`watch` 检测到 20.x 时会把两个文件改名为 `.disabled`，不会删除；确认新版可用后发布新的 payload 并调宽范围，再运行 `zh update omp`。
 
 ## 卸载
 
 ```bash
-npx -p tern-omp-l10n l10n uninstall omp
+npx -p tern-omp-zh zh uninstall omp
 ```
 
 CLI 会把两个文件移到同目录备份。手动卸载可删除或改名这两个文件，然后重启 omp。

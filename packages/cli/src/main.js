@@ -10,15 +10,15 @@ import { defaultRefreshHosts, runWatch } from "./watch.js";
 
 const VERSION = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8")).version;
 
-const HELP = `tern-omp-l10n ${VERSION} — Tern / omp 汉化安装与监测
+const HELP = `tern-omp-zh ${VERSION} — Tern / omp 汉化安装与监测
 
 用法:
-  l10n status [--json]
-  l10n install [tern|omp|all] [--force]
-  l10n uninstall [tern|omp|all]
-  l10n update [tern|omp|all] [--offline]
-  l10n watch [--interval 30m] [--no-auto-update] [--once]
-  l10n autostart on|off|status
+  zh status [--json]
+  zh install [tern|omp|all] [--force]
+  zh uninstall [tern|omp|all]
+  zh update [tern|omp|all] [--offline]
+  zh watch [--interval 30m] [--no-auto-update] [--once]
+  zh autostart on|off|status
 
 通用选项:
   --dry-run              只打印将执行的操作，不写文件、不运行宿主命令
@@ -35,7 +35,7 @@ const HELP = `tern-omp-l10n ${VERSION} — Tern / omp 汉化安装与监测
 说明:
   install/uninstall 的备份命名为 <路径>.backup-<YYYYMMDD-HHmmss>。
   status 与 watch 检测到宿主版本不受支持时，会自动停用汉化（移动/改名，不删除）。
-  状态与日志: ~/.l10n/state.json、~/.l10n/l10n.log
+  状态与日志: ~/.tern-omp-zh/state.json、~/.tern-omp-zh/zh.log
 `;
 
 function fail(message) {

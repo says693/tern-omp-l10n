@@ -1,4 +1,4 @@
-/** `l10n watch`: periodic compatibility enforcement + upstream update check. */
+/** `zh watch`: periodic compatibility enforcement + upstream update check. */
 import { detectHosts } from "./host.js";
 import { enforceCompatibility, installedVersion } from "./installer.js";
 import { isNewer, checkUpstreams } from "./upstream.js";

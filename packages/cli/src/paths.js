@@ -8,11 +8,11 @@ export const OMP_FILES = ["omp-di18n.ts", "omp-di18n.zh-CN.json"];
 
 export function resolvePaths(overrides = {}) {
   const env = overrides.env ?? process.env;
-  const home = overrides.home ?? env.L10N_HOME ?? homedir();
-  const appData = overrides.appData ?? env.L10N_APPDATA ?? env.APPDATA ?? join(home, "AppData", "Roaming");
+  const home = overrides.home ?? env.TERN_OMP_ZH_HOME ?? homedir();
+  const appData = overrides.appData ?? env.TERN_OMP_ZH_APPDATA ?? env.APPDATA ?? join(home, "AppData", "Roaming");
   const localAppData =
-    overrides.localAppData ?? env.L10N_LOCALAPPDATA ?? env.LOCALAPPDATA ?? join(home, "AppData", "Local");
-  const stateDir = overrides.stateDir ?? env.L10N_STATE_DIR ?? join(home, ".l10n");
+    overrides.localAppData ?? env.TERN_OMP_ZH_LOCALAPPDATA ?? env.LOCALAPPDATA ?? join(home, "AppData", "Local");
+  const stateDir = overrides.stateDir ?? env.TERN_OMP_ZH_STATE_DIR ?? join(home, ".tern-omp-zh");
   const ternPluginsDir = overrides.ternPluginsDir ?? join(appData, "Tern", "plugins");
   const ompDir = overrides.ompExtensionsDir ?? join(home, ".omp", "agent", "extensions");
 
@@ -24,7 +24,7 @@ export function resolvePaths(overrides = {}) {
     localAppData,
     stateDir,
     stateFile: join(stateDir, "state.json"),
-    logFile: join(stateDir, "l10n.log"),
+    logFile: join(stateDir, "zh.log"),
     upstreamDir: join(stateDir, "upstream"),
     ternPluginsDir,
     ternTarget: join(ternPluginsDir, TERN_PLUGIN_ID),

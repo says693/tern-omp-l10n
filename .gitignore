@@ -1,6 +1,6 @@
 node_modules/
 *.tgz
-.l10n/
+.tern-omp-zh/
 
 # secrets
 .npmrc*

@@ -44,18 +44,18 @@ function walk(dir, base = dir) {
 }
 
 const env = process.env;
-const home = env.L10N_SYNC_HOME || homedir();
+const home = env.TERN_OMP_ZH_SYNC_HOME || homedir();
 const appData = env.APPDATA || join(home, "AppData", "Roaming");
 const localAppData = env.LOCALAPPDATA || join(home, "AppData", "Local");
 const SOURCES = {
   omp: {
-    dir: env.L10N_SYNC_OMP_DIR || join(home, ".omp", "agent", "extensions"),
+    dir: env.TERN_OMP_ZH_SYNC_OMP_DIR || join(home, ".omp", "agent", "extensions"),
     files: ["omp-di18n.ts", "omp-di18n.zh-CN.json"],
     target: join(ROOT, "packages", "omp-di18n"),
   },
   tern: {
     dir:
-      env.L10N_SYNC_TERN_DIR ||
+      env.TERN_OMP_ZH_SYNC_TERN_DIR ||
       [join(appData, "Tern", "plugins", "tern-zh-plus"), join(localAppData, "Tern", "plugins", "tern-zh-plus")].find(
         (candidate) => existsSync(candidate),
       ) ||
