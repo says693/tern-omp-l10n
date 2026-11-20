@@ -7,8 +7,8 @@
 | 包 | 最新版本 | 用途 |
 | --- | --- | --- |
 | [`omp-di18n`](https://www.npmjs.com/package/omp-di18n) | `0.1.0` | omp 汉化 payload |
-| [`tern-zh-plus`](https://www.npmjs.com/package/tern-zh-plus) | `0.1.0` | Tern 汉化 payload |
-| [`tern-omp-l10n`](https://www.npmjs.com/package/tern-omp-l10n) | `0.1.1` | 安装/更新/监测 CLI |
+| [`tern-zh-plus`](https://www.npmjs.com/package/tern-zh-plus) | `0.1.1` | Tern 汉化 payload |
+| [`tern-omp-l10n`](https://www.npmjs.com/package/tern-omp-l10n) | `0.1.2` | 安装/更新/监测 CLI |
 
 ```bash
 npx -p tern-omp-l10n l10n status
@@ -23,7 +23,7 @@ npx -p tern-omp-l10n l10n install all
 | `tern-zh-plus` | `plugin/**` 整套 Tern 插件（含 `compat/`、TSV、Luau）+ `compat.json` | Tern 构建白名单 |
 | `tern-omp-l10n` | `l10n` 命令（`status` / `install` / `uninstall` / `update` / `watch` / `autostart`） | Node.js `>=20.11` |
 
-Tern 白名单：`0.9.28 (3e7c863)`、`0.9.23 (35c63ab)`、`0.9.12 (e498b49)`、`0.9.9 (9c1c09f)`。Tern 的兼容判定按**构建号**精确匹配，同版本号但不同构建也视为不兼容。
+Tern 白名单：`0.9.29 (379ecc4)`、`0.9.28 (3e7c863)`、`0.9.23 (35c63ab)`、`0.9.12 (e498b49)`、`0.9.9 (9c1c09f)`。Tern 的兼容判定按**构建号**精确匹配，同版本号但不同构建也视为不兼容。
 
 ## 快速开始
 
@@ -123,7 +123,14 @@ npm run pack                # npm pack 三个包
 
 ## 发布记录
 
-已于 2026-11-19 发布到 npm：
+2026-11-20，适配 Tern `0.9.29 (379ecc4)`：
+
+| 包 | 版本 |
+| --- | --- |
+| `tern-zh-plus` | `0.1.1` |
+| `tern-omp-l10n` | `0.1.2` |
+
+2026-11-19 首次发布：
 
 | 包 | 版本 |
 | --- | --- |

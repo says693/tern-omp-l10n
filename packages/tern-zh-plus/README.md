@@ -8,6 +8,7 @@ Tern 终端的中英文界面插件 payload。插件目录保留完整的 `plugi
 
 | Tern 版本 | 构建 | 设置页样式来源 |
 | --- | --- | --- |
+| 0.9.29 | `379ecc4` | `plugin/compat/0.9.29/` |
 | 0.9.28 | `3e7c863` | `plugin/compat/0.9.28/` |
 | 0.9.23 | `35c63ab` | `plugin/compat/0.9.23/` |
 | 0.9.12 | `e498b49` | `plugin/prefs-*.css`（共享/旧版样式） |

@@ -22,8 +22,8 @@ l10n install all
 输出组件表，并逐行打印：
 
 ```
-Tern 插件版本: 0.1.0
-Tern 宿主版本: 0.9.28 (3e7c863)
+Tern 插件版本: 0.9.1 (plugin.toml)
+Tern 宿主版本: 0.9.29 (379ecc4)
 Tern 兼容性: 兼容
 omp 扩展版本: 0.1.0
 omp 宿主版本: 19.0.0

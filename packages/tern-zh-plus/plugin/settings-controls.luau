@@ -1,5 +1,5 @@
 -- Keep native controls and accessible names; translate their display labels.
--- 0.9.28 navigation rows lost their aria-label, so that layout is scoped by position.
+-- 0.9.28 and 0.9.29 navigation rows lost their aria-label, so that layout is scoped by position.
 local positions = {
     general = { 1, 1 }, agents = { 1, 2 }, appearance = { 1, 3 }, terminal = { 1, 4 },
     lenses = { 1, 5 }, databases = { 1, 6 }, notebooks = { 1, 7 }, carly = { 1, 8 },
@@ -9,6 +9,10 @@ local positions = {
 
 local function is0928(version)
     return version ~= nil and version:match("^tern 0%.9%.28 ") ~= nil
+end
+
+local function is0929(version)
+    return version ~= nil and version:match("^tern 0%.9%.29 ") ~= nil
 end
 
 local function ariaScope(page)
@@ -23,13 +27,14 @@ local function nthScope(page)
 end
 
 local function scope(page, version)
-    if is0928(version) then return nthScope(page) or ariaScope(page) end
+    if is0928(version) or is0929(version) then return nthScope(page) or ariaScope(page) end
     return ariaScope(page)
 end
 local function root(page, version) return scope(page, version) .. '.pf-doc > ' end
 local labels = {}
 local legacyPages = {}
 local modernPages = {}
+local modernPages929 = {}
 local cachedKey = nil
 local cachedCss = ""
 
@@ -60,8 +65,10 @@ end
 
 loadPages(tern.plugin.dir .. "/settings-controls.tsv", legacyPages)
 loadPages(tern.plugin.dir .. "/settings-controls-0.9.28.tsv", modernPages)
+loadPages(tern.plugin.dir .. "/settings-controls-0.9.29.tsv", modernPages929)
 
 local function pagesFor(version)
+    if is0929(version) then return modernPages929 end
     if is0928(version) then return modernPages end
     return legacyPages
 end

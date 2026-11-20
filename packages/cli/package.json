@@ -1,6 +1,6 @@
 {
   "name": "tern-omp-l10n",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Install, update, monitor, and safely disable Chinese localization for Tern and omp",
   "type": "module",
   "bin": {
@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "omp-di18n": "0.1.0",
-    "tern-zh-plus": "0.1.0"
+    "tern-zh-plus": "0.1.1"
   }
 }
