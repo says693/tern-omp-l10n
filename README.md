@@ -7,8 +7,8 @@
 | 包 | 最新版本 | 用途 |
 | --- | --- | --- |
 | [`omp-di18n`](https://www.npmjs.com/package/omp-di18n) | `0.1.0` | omp 汉化 payload |
-| [`tern-zh-plus`](https://www.npmjs.com/package/tern-zh-plus) | `0.1.1` | Tern 汉化 payload |
-| [`tern-omp-l10n`](https://www.npmjs.com/package/tern-omp-l10n) | `0.1.2` | 安装/更新/监测 CLI |
+| [`tern-zh-plus`](https://www.npmjs.com/package/tern-zh-plus) | `0.1.0` | Tern 汉化 payload |
+| [`tern-omp-l10n`](https://www.npmjs.com/package/tern-omp-l10n) | `0.1.1` | 安装/更新/监测 CLI |
 
 ```bash
 npx -p tern-omp-l10n l10n status
@@ -123,9 +123,9 @@ npm run pack                # npm pack 三个包
 
 ## 发布记录
 
-2026-11-20，适配 Tern `0.9.29 (379ecc4)`：
+2026-11-20 为 Tern `0.9.29 (379ecc4)` 准备（**尚未发布**，本机 npm 凭据已失效）：
 
-| 包 | 版本 |
+| 包 | 待发布版本 |
 | --- | --- |
 | `tern-zh-plus` | `0.1.1` |
 | `tern-omp-l10n` | `0.1.2` |
