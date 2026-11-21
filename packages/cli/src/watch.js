@@ -69,11 +69,15 @@ export async function watchTick(ctx, options = {}) {
       ctx.logger.info(
         `发现上游新版本：${candidates.map((candidate) => `${candidate.name} ${candidate.latest}`).join(", ")}，开始自动更新`,
       );
-      updateResult = await update(ctx, "all", {
-        upstreamVersions: components,
-        fetchImpl: options.fetchImpl ?? ctx.fetchImpl,
-        timeout: options.timeout,
-      });
+      updateResult = { updated: [], skipped: [], components };
+      for (const candidate of candidates) {
+        const result = await update(ctx, candidate.name, {
+          upstreamVersions: components,
+          timeout: options.timeout,
+        });
+        updateResult.updated.push(...result.updated);
+        updateResult.skipped.push(...result.skipped);
+      }
       ctx.state.record({
         action: "auto-update",
         components: updateResult.updated,

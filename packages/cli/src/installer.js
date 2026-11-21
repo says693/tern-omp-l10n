@@ -59,7 +59,7 @@ function isEnabled(ctx, name) {
 }
 
 function assertCompatibleForInstall(ctx, name, force) {
-  const result = evaluate(name, ctx.hosts[name], ctx.compat[name]);
+  const result = evaluate(name, ctx.hosts[name], ctx.payloads[name].compat);
   if (result.compatible === false && !force) {
     throw new Error(`${name} 宿主不兼容：${result.reason}。如确需安装，请加 --force。`);
   }
@@ -117,6 +117,7 @@ function installTern(ctx) {
     ...ctx.state.component.tern,
     installed: true,
     installedVersion: payload.version,
+    installedPayload: { packageName: payload.packageName, version: payload.version, compat: payload.compat },
     disabled: false,
     disabledAt: null,
     disabledReason: null,
@@ -205,6 +206,7 @@ function installOmp(ctx) {
     ...ctx.state.component.omp,
     installed: true,
     installedVersion: payload.version,
+    installedPayload: { packageName: payload.packageName, version: payload.version, compat: payload.compat },
     disabled: false,
     disabledAt: null,
     disabledReason: null,
@@ -224,6 +226,7 @@ export function install(ctx, selector = "all", { force = false } = {}) {
     assertCompatibleForInstall(ctx, name, force);
     if (name === "tern") installTern(ctx);
     else installOmp(ctx);
+    if (!ctx.dryRun) ctx.compat[name] = ctx.payloads[name].compat;
     installed.push(name);
   }
   ctx.state.save();

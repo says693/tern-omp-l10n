@@ -53,5 +53,8 @@ export function evaluateOmp(host, compat) {
 }
 
 export function evaluate(name, host, compat) {
+  if (compat === null) {
+    return { compatible: null, label: "未知", reason: "无法确定已安装 payload 的兼容规则" };
+  }
   return name === "tern" ? evaluateTern(host, compat) : evaluateOmp(host, compat);
 }

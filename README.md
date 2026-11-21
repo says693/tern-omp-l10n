@@ -59,7 +59,7 @@ zh status
 | `zh status [--json]` | 输出组件表，并逐行显示 `Tern 插件版本`、`omp 扩展版本`、`宿主版本`、`兼容性`、备份数。每次都会顺带检查兼容性。 |
 | `zh install [tern\|omp\|all] [--force]` | 从 CLI 内置的 payload 安装。已有目录/文件先移到 `.backup-<YYYYMMDD-HHmmss>`；失败时自动回滚。宿主不兼容时拒绝安装（`--force` 可强制）。 |
 | `zh uninstall [tern\|omp\|all]` | 把已安装插件目录或扩展文件移到同目录备份，不递归删除。 |
-| `zh update [tern\|omp\|all] [--offline]` | 重新同步 payload。默认先查 npm registry：有更新则下载到 `~/.tern-omp-zh/upstream` 后安装；离线或失败时回退到 CLI 内置版本。 |
+| `zh update [tern\|omp\|all] [--offline]` | 重新同步 payload。默认先查 npm registry：有更新则校验下载后缓存并安装；查询/下载失败或上游不兼容时保留现有安装，首次安装才尝试内置版本。`--offline` 显式重装内置版本。 |
 | `zh watch [--interval 30m] [--no-auto-update] [--once]` | 周期检查宿主兼容性并轮询 GitHub releases / npm registry。新版本自动触发 `update`，可用 `--no-auto-update` 关闭。 |
 | `zh autostart on\|off\|status` | 通过 `schtasks` 注册/删除 ONLOGON 任务 `tern-omp-zh-watch`。失败只提示，不改系统。 |
 
@@ -101,7 +101,11 @@ zh status
 - GitHub releases：`losewayy/tern-zh-cn`、`losewayy/omp-di18n`
 - npm registry：`tern-zh-plus`、`omp-di18n`
 
-超时、离线、404 只写日志，不会让 `watch` 退出。发现比当前安装/内置版本新的 npm 版本时，自动下载并重装；下载失败则保留现有安装。
+超时、离线、404 只写日志，不会让 `watch` 退出。发现比当前安装/内置版本新的 npm 版本时，仅更新对应组件；下载失败或上游不兼容则保留现有安装，在线更新不会降级。下载先写独立临时目录，校验包名、版本与必要文件后才加入缓存，失败不会留下可复用的半套下载。
+
+npm 下载使用 `--ignore-scripts`，不会在兼容性检查前或之后执行 payload/依赖的 npm 生命周期脚本。payload 是预构建插件/扩展，仍须信任发布者：其代码会在 Tern/omp 加载时运行。
+
+成功安装会将该 payload 的包名、版本及兼容规则一并写入状态；后续 `status/watch` 不再用旧内置版本的规则判断已安装的上游版本。规则快照需与安装记录版本匹配，且实际安装文件仍存在；仅有下载缓存不算安装。旧状态缺快照时核对已记录来源的包名与版本，无法确认则显示兼容未知、保留现状。
 
 ## 开发
 

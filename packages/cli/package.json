@@ -25,7 +25,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/losewayy/tern-zh-cn.git"
+    "url": "git+https://github.com/says693/tern-omp-zh.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/says693/tern-omp-zh#readme",
+  "bugs": {
+    "url": "https://github.com/says693/tern-omp-zh/issues"
   },
   "publishConfig": {
     "access": "public"
